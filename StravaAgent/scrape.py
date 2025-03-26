@@ -2,6 +2,7 @@ import requests
 from dotenv import load_dotenv
 import os
 import pprint
+import json 
 
 ENV_FILE = "var.env"
 load_dotenv(ENV_FILE)
@@ -15,7 +16,11 @@ def get_activity(activity_id):
     response = requests.get(url, headers=headers)
 
     if response.status_code == 200:
-        return response.json()  
+        data = response.json()
+        with open("response.json", "w", encoding="utf-8") as file:
+            json.dump(data, file, indent=4) 
+            
+        return data 
     else:
         return f"Error: {response.status_code}, {response.json()}"
 
