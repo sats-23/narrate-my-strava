@@ -7,7 +7,7 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 import threading
 import urllib.parse
 
-ENV_FILE = "var.env"
+ENV_FILE = "StravaAgent/var.env"
 load_dotenv(ENV_FILE)
 
 CLIENT_ID = os.getenv("STRAVA_CLIENT_ID")
@@ -86,7 +86,7 @@ def save_tokens(tokens):
     
     print("Tokens saved to var.env")
 
-if __name__ == "__main__":
+def main():
     request_authorization()
     while auth_code is None:
         time.sleep(1)
@@ -94,4 +94,7 @@ if __name__ == "__main__":
     if access_token:
         print(f"Your new access token: {access_token}")
     else:
-        print("Failed to retrieve access token.")
+        print("Failed to retrieve access token.")    
+
+if __name__ == "__main__":
+    main()
