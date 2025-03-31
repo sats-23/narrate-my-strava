@@ -24,7 +24,4 @@ def get_activity(activity_id):
     else:
         return f"Error: {response.status_code}, {response.json()}"
 
-activity_id = input("Enter Activity ID: ")  
-activity_data = get_activity(activity_id)
-pprint.pprint(activity_data)
 

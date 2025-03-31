@@ -49,9 +49,9 @@ def get_historical_weather(lat, lon, timestamp):
     return {"error": "Weather data not found for the given timestamp"}
 
 #Test data
-lat, lon = 12.972617, 77.636968
-timestamp = "2025-03-24T07:39:32Z"
+# lat, lon = 12.972617, 77.636968
+# timestamp = "2025-03-24T07:39:32Z"
 
-#API works only with dates upto 1 week
-weather_info = get_historical_weather(lat, lon, timestamp)
-print(weather_info)
+# #API works only with dates upto 1 week
+# weather_info = get_historical_weather(lat, lon, timestamp)
+# print(weather_info)
